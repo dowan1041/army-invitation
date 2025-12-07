@@ -1,8 +1,14 @@
+"use client";
+
 import LeafBranch from "./LeafBranch";
 
 export default function DetailsSection() {
+  const scrollToNext = () => {
+    document.getElementById("rsvp")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <section className="snap-section h-screen bg-[#F5C518] relative flex flex-col justify-center items-center px-4 sm:px-8 py-12 sm:py-16 overflow-hidden">
+    <section id="details" className="snap-section h-screen bg-[#F5C518] relative flex flex-col justify-center items-center px-4 sm:px-8 py-12 sm:py-16 overflow-hidden">
       {/* Vertical title on the right - hidden on small mobile */}
       <div className="hidden sm:block absolute right-20 sm:right-40 md:right-52 top-[80%] rotate-90 origin-right text-white/30 font-bold tracking-widest select-none leading-tight text-4xl sm:text-6xl md:text-8xl">
         <div>진규형과</div>
@@ -99,6 +105,27 @@ export default function DetailsSection() {
           </div>
         </div>
       </div>
+
+      {/* Scroll indicator */}
+      <button
+        onClick={scrollToNext}
+        className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer hover:scale-110 transition-transform"
+        aria-label="Scroll to RSVP section"
+      >
+        <svg
+          className="w-5 h-5 sm:w-6 sm:h-6 text-gray-800"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 14l-7 7m0 0l-7-7m7 7V3"
+          />
+        </svg>
+      </button>
     </section>
   );
 }

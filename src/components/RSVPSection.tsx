@@ -111,7 +111,7 @@ export default function RSVPSection() {
   }
 
   return (
-    <section className="snap-section h-screen bg-[#F5C518] relative flex flex-col justify-start sm:justify-center items-center px-4 sm:px-8 py-6 sm:py-8 overflow-x-hidden overflow-y-auto">
+    <section id="rsvp" className="snap-section h-screen bg-[#F5C518] relative flex flex-col justify-start sm:justify-center items-center px-4 sm:px-8 py-6 sm:py-8 overflow-x-hidden overflow-y-auto">
       {/* Admin Info Button */}
       <a
         href="/manage"

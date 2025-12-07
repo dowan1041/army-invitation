@@ -1,8 +1,14 @@
+"use client";
+
 import LeafDecoration from "./LeafDecoration";
 
 export default function HeroSection() {
+  const scrollToNext = () => {
+    document.getElementById("details")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <section className="snap-section h-screen bg-[#F5C518] relative flex flex-col justify-center items-center px-4 sm:px-8 overflow-hidden">
+    <section id="hero" className="snap-section h-screen bg-[#F5C518] relative flex flex-col justify-center items-center px-4 sm:px-8 overflow-hidden">
       {/* Presentation Button */}
       <a
         href="/presentation"
@@ -45,7 +51,11 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <button
+        onClick={scrollToNext}
+        className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer hover:scale-110 transition-transform"
+        aria-label="Scroll to next section"
+      >
         <svg
           className="w-5 h-5 sm:w-6 sm:h-6 text-gray-800"
           fill="none"
@@ -59,7 +69,7 @@ export default function HeroSection() {
             d="M19 14l-7 7m0 0l-7-7m7 7V3"
           />
         </svg>
-      </div>
+      </button>
     </section>
   );
 }
