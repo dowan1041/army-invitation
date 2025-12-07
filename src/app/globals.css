@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Dancing+Script:wght@700&family=Noto+Sans+KR:wght@400;700&display=swap');
+
+:root {
+  --color-yellow: #F5C518;
+  --color-dark: #1a1a1a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  font-family: 'Noto Sans KR', 'Playfair Display', Georgia, serif;
+  background-color: var(--color-yellow);
+  overflow-x: hidden;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+.snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+.font-script {
+  font-family: 'Dancing Script', cursive;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+/* Decorative leaf animation */
+@keyframes sway {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+.leaf-decoration {
+  animation: sway 3s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+
+  .snap-section {
+    scroll-snap-align: start;
+  }
+}
+
+/* Hide vertical text on very small screens */
+@media (max-width: 480px) {
+  .hide-on-mobile {
+    display: none;
+  }
+}
+
+/* Safe area for notched phones */
+@supports (padding: max(0px)) {
+  .snap-section {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}
