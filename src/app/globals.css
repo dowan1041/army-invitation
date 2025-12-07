@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Dancing+Script:wght@700&family=Noto+Sans+KR:wght@400;700&display=swap');
-
 :root {
   --color-yellow: #F5C518;
   --color-dark: #1a1a1a;
@@ -21,7 +19,7 @@ html {
 }
 
 body {
-  font-family: 'Noto Sans KR', 'Playfair Display', Georgia, serif;
+  font-family: var(--font-noto), var(--font-playfair), Georgia, serif;
   background-color: var(--color-yellow);
   height: 100%;
   overflow: hidden;
@@ -46,11 +44,11 @@ body {
 }
 
 .font-script {
-  font-family: 'Dancing Script', cursive;
+  font-family: var(--font-dancing), cursive;
 }
 
 .font-serif {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-playfair), Georgia, serif;
 }
 
 .vertical-text {
