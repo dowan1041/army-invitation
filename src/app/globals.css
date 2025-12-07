@@ -73,10 +73,10 @@ body {
   transform-origin: bottom center;
 }
 
-/* Mobile optimizations */
+/* Mobile optimizations - keep mandatory for proper snap */
 @media (max-width: 640px) {
   .snap-container {
-    scroll-snap-type: y proximity;
+    scroll-snap-type: y mandatory;
   }
 }
 
@@ -87,9 +87,10 @@ body {
   }
 }
 
-/* Safe area for notched phones */
+/* Safe area for notched phones (iPhone 15 Pro Dynamic Island, etc.) */
 @supports (padding: max(0px)) {
   .snap-section {
+    padding-top: max(1rem, env(safe-area-inset-top));
     padding-left: max(1rem, env(safe-area-inset-left));
     padding-right: max(1rem, env(safe-area-inset-right));
     padding-bottom: max(1rem, env(safe-area-inset-bottom));
