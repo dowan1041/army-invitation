@@ -6,18 +6,21 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
   display: "swap",
+  style: ["normal", "italic"],
 });
 
 const dancingScript = Dancing_Script({
   subsets: ["latin"],
   variable: "--font-dancing",
   display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 const notoSansKR = Noto_Sans_KR({
   subsets: ["latin"],
   variable: "--font-noto",
   display: "swap",
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
