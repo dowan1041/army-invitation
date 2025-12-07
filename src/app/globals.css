@@ -16,24 +16,33 @@
 }
 
 html {
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
+  height: 100%;
+  overflow: hidden;
 }
 
 body {
   font-family: 'Noto Sans KR', 'Playfair Display', Georgia, serif;
   background-color: var(--color-yellow);
-  overflow-x: hidden;
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
+  height: 100%;
+  overflow: hidden;
+}
+
+.snap-container {
+  height: 100vh;
+  height: 100dvh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: contain;
 }
 
 .snap-section {
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
+  height: 100vh;
+  height: 100dvh;
+  flex-shrink: 0;
 }
 
 .font-script {
@@ -66,12 +75,8 @@ body {
 
 /* Mobile optimizations */
 @media (max-width: 640px) {
-  html {
+  .snap-container {
     scroll-snap-type: y proximity;
-  }
-
-  .snap-section {
-    scroll-snap-align: start;
   }
 }
 

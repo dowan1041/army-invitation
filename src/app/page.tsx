@@ -4,7 +4,7 @@ import RSVPSection from "@/components/RSVPSection";
 
 export default function Home() {
   return (
-    <main>
+    <main className="snap-container">
       <HeroSection />
       <DetailsSection />
       <RSVPSection />
