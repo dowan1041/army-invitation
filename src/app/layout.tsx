@@ -40,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className={`${playfair.variable} ${dancingScript.variable} ${notoSansKR.variable}`}>
-      <body className="antialiased">{children}</body>
+      <body className={`antialiased ${notoSansKR.className}`}>{children}</body>
     </html>
   );
 }

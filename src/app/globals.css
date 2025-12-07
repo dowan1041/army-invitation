@@ -19,7 +19,6 @@ html {
 }
 
 body {
-  font-family: var(--font-noto), var(--font-playfair), Georgia, serif;
   background-color: var(--color-yellow);
   height: 100%;
   overflow: hidden;

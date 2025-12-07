@@ -15,8 +15,9 @@ export default {
         },
       },
       fontFamily: {
-        serif: ["Georgia", "Cambria", "Times New Roman", "serif"],
-        script: ["Brush Script MT", "Segoe Script", "cursive"],
+        sans: ["var(--font-noto)", "system-ui", "sans-serif"],
+        serif: ["var(--font-playfair)", "Georgia", "serif"],
+        script: ["var(--font-dancing)", "cursive"],
       },
     },
   },
