@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Playfair_Display, Dancing_Script, Noto_Sans_KR } from "next/font/google";
+import { Playfair_Display, Dancing_Script, Noto_Sans_KR, Nanum_Pen_Script } from "next/font/google";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -23,6 +23,13 @@ const notoSansKR = Noto_Sans_KR({
   weight: ["400", "500", "700"],
 });
 
+const nanumPenScript = Nanum_Pen_Script({
+  subsets: ["latin"],
+  variable: "--font-nanum-pen",
+  display: "swap",
+  weight: "400",
+});
+
 export const metadata: Metadata = {
   title: "진규형과 아이들 연말모임",
   description: "2025년 12월 13일 연말모임 초대장",
@@ -42,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className={`${playfair.variable} ${dancingScript.variable} ${notoSansKR.variable}`}>
+    <html lang="ko" className={`${playfair.variable} ${dancingScript.variable} ${notoSansKR.variable} ${nanumPenScript.variable}`}>
       <body className={`antialiased ${notoSansKR.className}`}>{children}</body>
     </html>
   );

@@ -42,10 +42,10 @@ export default function HeroSection() {
 
       {/* Bottom left event name */}
       <div className="absolute left-4 sm:left-6 md:left-12 bottom-16 sm:bottom-8 md:bottom-12">
-        <p className="font-script text-2xl sm:text-3xl md:text-4xl text-gray-900">
+        <p className="font-korean-script text-2xl sm:text-3xl md:text-4xl text-gray-900">
           진규형과 아이들
         </p>
-        <p className="font-script text-xl sm:text-2xl md:text-3xl text-gray-900 -mt-1">
+        <p className="font-korean-script text-xl sm:text-2xl md:text-3xl text-gray-900 -mt-1">
           연말모임
         </p>
       </div>

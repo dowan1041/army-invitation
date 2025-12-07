@@ -46,6 +46,10 @@ body {
   font-family: var(--font-dancing), cursive;
 }
 
+.font-korean-script {
+  font-family: var(--font-nanum-pen), cursive;
+}
+
 .font-serif {
   font-family: var(--font-playfair), Georgia, serif;
 }

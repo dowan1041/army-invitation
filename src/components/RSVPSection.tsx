@@ -112,10 +112,10 @@ export default function RSVPSection() {
 
   return (
     <section id="rsvp" className="snap-section h-screen bg-[#F5C518] relative flex flex-col justify-start sm:justify-center items-center px-4 sm:px-8 py-6 sm:py-8 overflow-x-hidden overflow-y-auto">
-      {/* Admin Info Button */}
+      {/* Admin Info Button - hidden on mobile */}
       <a
         href="/manage"
-        className="absolute bottom-6 left-6 w-10 h-10 bg-red-600 hover:bg-red-700 rounded-full flex items-center justify-center shadow-lg transition-colors z-20"
+        className="hidden sm:flex absolute bottom-6 left-6 w-10 h-10 bg-red-600 hover:bg-red-700 rounded-full items-center justify-center shadow-lg transition-colors z-20"
         title="Manage RSVPs"
       >
         <span className="text-white font-bold text-lg">i</span>
