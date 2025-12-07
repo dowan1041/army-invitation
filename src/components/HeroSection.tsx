@@ -23,14 +23,14 @@ export default function HeroSection() {
       </div>
 
       {/* Main content */}
-      <div className="text-center z-10 max-w-2xl px-4">
-        <p className="text-lg sm:text-xl md:text-2xl font-serif text-gray-800 mb-2 tracking-wide">
+      <div className="text-center z-10 max-w-2xl px-4 -mt-16 sm:-mt-8 md:mt-0">
+        <p className="text-xl sm:text-xl md:text-2xl font-serif text-gray-800 mb-2 tracking-wide">
           YOU&apos;RE
         </p>
-        <h1 className="text-5xl sm:text-6xl md:text-8xl font-bold text-gray-900 mb-4 sm:mb-6 font-serif italic">
+        <h1 className="text-6xl sm:text-6xl md:text-8xl font-bold text-gray-900 mb-4 sm:mb-6 font-serif italic">
           Invited
         </h1>
-        <p className="text-xl sm:text-2xl md:text-3xl font-serif text-gray-800 tracking-wider">
+        <p className="text-2xl sm:text-2xl md:text-3xl font-serif text-gray-800 tracking-wider">
           DEC 13, 2025
         </p>
       </div>
@@ -42,10 +42,10 @@ export default function HeroSection() {
 
       {/* Bottom left event name */}
       <div className="absolute left-4 sm:left-6 md:left-12 bottom-16 sm:bottom-8 md:bottom-12">
-        <p className="font-korean-script text-2xl sm:text-3xl md:text-4xl text-gray-900">
+        <p className="font-korean-script text-4xl sm:text-5xl md:text-6xl text-gray-900">
           진규형과 아이들
         </p>
-        <p className="font-korean-script text-xl sm:text-2xl md:text-3xl text-gray-900 -mt-1">
+        <p className="font-korean-script text-3xl sm:text-4xl md:text-5xl text-gray-900 -mt-1">
           연말모임
         </p>
       </div>
