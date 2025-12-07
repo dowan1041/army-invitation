@@ -62,44 +62,44 @@ export default function DetailsSection() {
         </div>
 
         {/* Location & Fee */}
-        <div className="border-t border-gray-800/20 pt-6 sm:pt-8 flex flex-col gap-6 sm:gap-8 md:flex-row md:gap-12">
-          {/* Location */}
-          <div className="flex-1 text-center">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2 sm:mb-3">
+        <div className="border-t border-gray-800/20 pt-4 sm:pt-6 grid grid-cols-2 gap-4 sm:gap-8">
+          {/* Location & Contact */}
+          <div className="text-center">
+            <h3 className="text-base sm:text-xl md:text-2xl font-bold text-gray-900 mb-1 sm:mb-2">
               Location
             </h3>
-            <p className="text-sm sm:text-base md:text-lg text-gray-800">
+            <p className="text-xs sm:text-sm md:text-base text-gray-800">
               56 Field Ave
             </p>
-            <p className="text-sm sm:text-base md:text-lg text-gray-800 mb-4 sm:mb-6">
+            <p className="text-xs sm:text-sm md:text-base text-gray-800 mb-2 sm:mb-4">
               Hicksville, NY 11801
             </p>
 
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2 sm:mb-3">
+            <h3 className="text-base sm:text-xl md:text-2xl font-bold text-gray-900 mb-1 sm:mb-2">
               Contact
             </h3>
-            <p className="text-sm sm:text-base md:text-lg text-gray-800">Dowan Kim</p>
-            <p className="text-sm sm:text-base md:text-lg text-gray-800 mb-2 sm:mb-3">(347) 210-1245</p>
-            <p className="text-sm sm:text-base md:text-lg text-gray-800">Seoyeon Park</p>
-            <p className="text-sm sm:text-base md:text-lg text-gray-800">(347) 537-8866</p>
+            <p className="text-xs sm:text-sm md:text-base text-gray-800">Dowan Kim</p>
+            <p className="text-xs sm:text-sm md:text-base text-gray-800 mb-1 sm:mb-2">(347) 210-1245</p>
+            <p className="text-xs sm:text-sm md:text-base text-gray-800">Seoyeon Park</p>
+            <p className="text-xs sm:text-sm md:text-base text-gray-800">(347) 537-8866</p>
           </div>
 
           {/* Fee */}
-          <div className="flex-1 text-center">
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2 sm:mb-3">
+          <div className="text-center">
+            <h3 className="text-base sm:text-xl md:text-2xl font-bold text-gray-900 mb-1 sm:mb-2">
               Fee
             </h3>
-            <p className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2 sm:mb-3">
+            <p className="text-lg sm:text-2xl md:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">
               $80
             </p>
-            <p className="text-sm sm:text-base md:text-lg text-gray-700 mb-3 sm:mb-4">
-              (많은 맛있는 음식과 음료가 준비될 예정입니다)
+            <p className="text-xs sm:text-sm md:text-base text-gray-700 mb-2 sm:mb-3">
+              (맛있는 음식과 음료 준비)
             </p>
             <div className="flex justify-center">
               <img
                 src="/zelle.jpg"
                 alt="Zelle QR Code"
-                className="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 object-contain rounded-lg shadow-lg"
+                className="w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 object-contain rounded-lg shadow-lg"
               />
             </div>
           </div>
