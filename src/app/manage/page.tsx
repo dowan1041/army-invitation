@@ -16,6 +16,7 @@ interface Participant {
 }
 
 const RANKS = ["PV2", "PFC", "SPC", "SGT", "SSG", "SFC"];
+const PASSCODE = "dowan";
 
 export default function ManagePage() {
   const [participants, setParticipants] = useState<Participant[]>([]);
@@ -23,6 +24,27 @@ export default function ManagePage() {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editForm, setEditForm] = useState<Participant | null>(null);
   const [saving, setSaving] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [passcodeInput, setPasscodeInput] = useState("");
+  const [passcodeError, setPasscodeError] = useState(false);
+
+  useEffect(() => {
+    const stored = sessionStorage.getItem("manage_auth");
+    if (stored === "true") {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
+  const handlePasscodeSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (passcodeInput === PASSCODE) {
+      sessionStorage.setItem("manage_auth", "true");
+      setIsAuthenticated(true);
+      setPasscodeError(false);
+    } else {
+      setPasscodeError(true);
+    }
+  };
 
   const fetchParticipants = async () => {
     try {
@@ -50,8 +72,10 @@ export default function ManagePage() {
   };
 
   useEffect(() => {
-    fetchParticipants();
-  }, []);
+    if (isAuthenticated) {
+      fetchParticipants();
+    }
+  }, [isAuthenticated]);
 
   const handleEdit = (participant: Participant) => {
     setEditingId(participant.id);
@@ -106,6 +130,43 @@ export default function ManagePage() {
     if (!editForm) return;
     setEditForm({ ...editForm, [field]: value });
   };
+
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-gray-900 flex items-center justify-center px-4">
+        <div className="bg-gray-800 rounded-2xl shadow-2xl p-8 max-w-sm w-full">
+          <h2 className="text-2xl font-bold text-white mb-6 text-center">
+            Enter Passcode
+          </h2>
+          <form onSubmit={handlePasscodeSubmit} className="space-y-4">
+            <input
+              type="password"
+              value={passcodeInput}
+              onChange={(e) => setPasscodeInput(e.target.value)}
+              placeholder="Passcode"
+              className="w-full px-4 py-3 rounded-lg border-2 border-gray-600 bg-gray-700 text-white text-center text-lg focus:outline-none focus:border-[#F5C518]"
+              autoFocus
+            />
+            {passcodeError && (
+              <p className="text-red-500 text-center text-sm">Incorrect passcode</p>
+            )}
+            <button
+              type="submit"
+              className="w-full py-3 bg-[#F5C518] text-gray-900 font-bold rounded-lg hover:bg-yellow-400 transition-colors"
+            >
+              Enter
+            </button>
+          </form>
+          <a
+            href="/"
+            className="block mt-4 text-center text-gray-400 hover:text-white text-sm"
+          >
+            Back to Home
+          </a>
+        </div>
+      </div>
+    );
+  }
 
   if (loading) {
     return (

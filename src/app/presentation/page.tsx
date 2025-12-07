@@ -24,13 +24,37 @@ const RANK_IMAGES: Record<string, string> = {
   SFC: "/ranks/sfc.svg",
 };
 
+const PASSCODE = "dowan";
+
 export default function PresentationPage() {
   const [participants, setParticipants] = useState<Participant[]>([]);
   const [selectedParticipant, setSelectedParticipant] = useState<Participant | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [passcodeInput, setPasscodeInput] = useState("");
+  const [passcodeError, setPasscodeError] = useState(false);
 
   useEffect(() => {
+    const stored = sessionStorage.getItem("presentation_auth");
+    if (stored === "true") {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
+  const handlePasscodeSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (passcodeInput === PASSCODE) {
+      sessionStorage.setItem("presentation_auth", "true");
+      setIsAuthenticated(true);
+      setPasscodeError(false);
+    } else {
+      setPasscodeError(true);
+    }
+  };
+
+  useEffect(() => {
+    if (!isAuthenticated) return;
     const fetchParticipants = async () => {
       try {
         const querySnapshot = await getDocs(collection(db, "rsvp"));
@@ -61,7 +85,44 @@ export default function PresentationPage() {
     };
 
     fetchParticipants();
-  }, []);
+  }, [isAuthenticated]);
+
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-[#F5C518] flex items-center justify-center px-4">
+        <div className="bg-white/90 rounded-2xl shadow-2xl p-8 max-w-sm w-full">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            Enter Passcode
+          </h2>
+          <form onSubmit={handlePasscodeSubmit} className="space-y-4">
+            <input
+              type="password"
+              value={passcodeInput}
+              onChange={(e) => setPasscodeInput(e.target.value)}
+              placeholder="Passcode"
+              className="w-full px-4 py-3 rounded-lg border-2 border-gray-300 text-gray-900 text-center text-lg focus:outline-none focus:border-gray-800"
+              autoFocus
+            />
+            {passcodeError && (
+              <p className="text-red-600 text-center text-sm">Incorrect passcode</p>
+            )}
+            <button
+              type="submit"
+              className="w-full py-3 bg-gray-900 text-white font-bold rounded-lg hover:bg-gray-800 transition-colors"
+            >
+              Enter
+            </button>
+          </form>
+          <a
+            href="/"
+            className="block mt-4 text-center text-gray-600 hover:text-gray-800 text-sm"
+          >
+            Back to Home
+          </a>
+        </div>
+      </div>
+    );
+  }
 
   if (loading) {
     return (
