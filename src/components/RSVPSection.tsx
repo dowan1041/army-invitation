@@ -111,7 +111,7 @@ export default function RSVPSection() {
   }
 
   return (
-    <section id="rsvp" className="snap-section h-screen bg-[#F5C518] relative flex flex-col justify-start sm:justify-center items-center px-4 sm:px-8 py-6 sm:py-8 overflow-x-hidden overflow-y-auto">
+    <section id="information" className="snap-section h-screen bg-[#F5C518] relative flex flex-col justify-start sm:justify-center items-center px-4 sm:px-8 py-6 sm:py-8 overflow-x-hidden overflow-y-auto">
       {/* Admin Info Button - hidden on mobile */}
       <a
         href="/manage"
@@ -123,7 +123,7 @@ export default function RSVPSection() {
 
       {/* Vertical title on the right */}
       <div className="absolute right-2 sm:right-4 md:right-8 lg:right-12 top-1/2 -translate-y-1/2 vertical-text text-white/15 sm:text-white/20 md:text-white/30 font-bold tracking-widest select-none text-3xl sm:text-4xl md:text-6xl lg:text-8xl">
-        RSVP
+        Information
       </div>
 
       <div className="max-w-3xl w-full">
@@ -133,7 +133,7 @@ export default function RSVPSection() {
         </div>
 
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 text-center">
-          RSVP
+          Information
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">

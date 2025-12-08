@@ -4,7 +4,7 @@ import LeafBranch from "./LeafBranch";
 
 export default function DetailsSection() {
   const scrollToNext = () => {
-    document.getElementById("rsvp")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("information")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -32,7 +32,8 @@ export default function DetailsSection() {
               <p className="text-base sm:text-lg md:text-xl font-bold text-gray-900">Dinner</p>
               <p className="text-xs sm:text-sm md:text-base text-gray-700">
                 한식으로 푸짐하게 준비될 예정입니다.<br />
-                (음료 주류 포함)
+                (음료 주류 포함)<br />
+                *마시고 싶은 술 있으면 따로 가져오시면 됩니다
               </p>
             </div>
           </div>
@@ -51,7 +52,7 @@ export default function DetailsSection() {
 
           <div className="flex items-start gap-4 sm:gap-6">
             <span className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 w-16 sm:w-20 flex-shrink-0">
-              21:00
+              20:00
             </span>
             <div>
               <p className="text-base sm:text-lg md:text-xl font-bold text-gray-900">Free Time</p>
@@ -151,9 +152,6 @@ export default function DetailsSection() {
             <p className="text-lg sm:text-2xl md:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">
               $80
             </p>
-            <p className="text-xs sm:text-sm md:text-base text-gray-700 mb-2 sm:mb-3">
-              (맛있는 음식과 음료 준비)
-            </p>
             <div className="flex justify-center">
               <img
                 src="/zelle.jpg"
@@ -169,7 +167,7 @@ export default function DetailsSection() {
       <button
         onClick={scrollToNext}
         className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 animate-bounce cursor-pointer hover:scale-110 transition-transform"
-        aria-label="Scroll to RSVP section"
+        aria-label="Scroll to Information section"
       >
         <svg
           className="w-5 h-5 sm:w-6 sm:h-6 text-gray-800"
