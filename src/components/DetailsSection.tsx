@@ -55,9 +55,32 @@ export default function DetailsSection() {
             <div>
               <p className="text-base sm:text-lg md:text-xl font-bold text-gray-900">Free Time</p>
               <p className="text-xs sm:text-sm md:text-base text-gray-700">
-                간단한 게임과 담소
+                자유시간
               </p>
             </div>
+          </div>
+        </div>
+
+        {/* Dress Code Section */}
+        <div className="mb-8 sm:mb-10">
+          {/* Decorative bar */}
+          <div className="flex items-center justify-center mb-4 sm:mb-6">
+            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-800/30 to-transparent"></div>
+            <div className="mx-4 w-2 h-2 bg-gray-800 rounded-full"></div>
+            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-gray-800/30 to-transparent"></div>
+          </div>
+
+          {/* Dress Code Content */}
+          <div className="text-center px-4">
+            <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
+              Dress Code
+            </h3>
+            <p className="text-sm sm:text-base md:text-lg text-gray-800 leading-relaxed">
+              Ugly sweater or red/green point
+            </p>
+            <p className="text-xs sm:text-sm text-gray-600 italic mt-1">
+              (not Mandatory)
+            </p>
           </div>
         </div>
 
