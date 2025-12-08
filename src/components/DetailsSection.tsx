@@ -31,7 +31,8 @@ export default function DetailsSection() {
             <div>
               <p className="text-base sm:text-lg md:text-xl font-bold text-gray-900">Dinner</p>
               <p className="text-xs sm:text-sm md:text-base text-gray-700">
-                갈비 / 삼겹살 / ...
+                한식으로 푸짐하게 준비될 예정입니다.<br />
+                (음료 주류 포함)
               </p>
             </div>
           </div>
@@ -75,9 +76,28 @@ export default function DetailsSection() {
             <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-2 sm:mb-3">
               Dress Code
             </h3>
-            <p className="text-sm sm:text-base md:text-lg text-gray-800 leading-relaxed">
-              Ugly sweater or red/green point
-            </p>
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-2">
+              {/* Ugly Sweater */}
+              <div className="flex items-center">
+                <span className="text-sm sm:text-base text-gray-800">Ugly sweater</span>
+              </div>
+
+              <span className="text-gray-500">or</span>
+
+              {/* Red */}
+              <div className="flex items-center gap-1 sm:gap-2">
+                <div className="w-3 h-3 sm:w-4 sm:h-4 bg-red-500 rounded-full border border-red-600"></div>
+                <span className="text-sm sm:text-base text-gray-800">red</span>
+              </div>
+
+              <span className="text-gray-400">/</span>
+
+              {/* Green */}
+              <div className="flex items-center gap-1 sm:gap-2">
+                <div className="w-3 h-3 sm:w-4 sm:h-4 bg-green-500 rounded-full border border-green-600"></div>
+                <span className="text-sm sm:text-base text-gray-800">green point</span>
+              </div>
+            </div>
             <p className="text-xs sm:text-sm text-gray-600 italic mt-1">
               (not Mandatory)
             </p>
@@ -88,9 +108,25 @@ export default function DetailsSection() {
         <div className="border-t border-gray-800/20 pt-4 sm:pt-6 grid grid-cols-2 gap-4 sm:gap-8">
           {/* Location & Contact */}
           <div className="text-center">
-            <h3 className="text-base sm:text-xl md:text-2xl font-bold text-gray-900 mb-1 sm:mb-2">
-              Location
-            </h3>
+            <div className="flex items-center justify-center gap-2 mb-1 sm:mb-2">
+              <h3 className="text-base sm:text-xl md:text-2xl font-bold text-gray-900">
+                Location
+              </h3>
+              <button
+                onClick={() => {
+                  const address = "56 Field Ave, Hicksville, NY 11801";
+                  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+                  window.open(mapsUrl, '_blank');
+                }}
+                className="p-1.5 sm:p-2 bg-gray-800 hover:bg-gray-700 text-white rounded-full transition-colors group"
+                aria-label="Open in Google Maps"
+              >
+                <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </button>
+            </div>
             <p className="text-xs sm:text-sm md:text-base text-gray-800">
               56 Field Ave
             </p>
