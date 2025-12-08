@@ -17,8 +17,8 @@ export default function HeroSection() {
         Presentation
       </a>
 
-      {/* Vertical text on the right - hidden on small mobile */}
-      <div className="hidden sm:block absolute right-4 md:right-6 top-1/2 -translate-y-1/2 vertical-text text-white/30 text-4xl sm:text-6xl md:text-8xl font-bold tracking-widest select-none">
+      {/* Vertical text on the right */}
+      <div className="absolute right-2 sm:right-4 md:right-6 top-1/2 -translate-y-1/2 vertical-text text-white/20 sm:text-white/30 text-2xl sm:text-4xl md:text-6xl lg:text-8xl font-bold tracking-widest select-none whitespace-nowrap">
         NY National Guard
       </div>
 

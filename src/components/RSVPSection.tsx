@@ -121,9 +121,9 @@ export default function RSVPSection() {
         <span className="text-white font-bold text-lg">i</span>
       </a>
 
-      {/* Vertical title on the right - hidden on mobile */}
-      <div className="hidden lg:block absolute right-40 lg:right-52 top-[80%] rotate-90 origin-right text-white/30 font-bold tracking-widest select-none leading-tight text-6xl lg:text-8xl">
-        <div>RSVP</div>
+      {/* Vertical title on the right */}
+      <div className="absolute right-2 sm:right-4 md:right-8 lg:right-12 top-1/2 -translate-y-1/2 vertical-text text-white/15 sm:text-white/20 md:text-white/30 font-bold tracking-widest select-none text-3xl sm:text-4xl md:text-6xl lg:text-8xl">
+        RSVP
       </div>
 
       <div className="max-w-3xl w-full">
